@@ -1,0 +1,25 @@
+<nav class="navbar">
+    <div class="nav-left">
+        <a href="{% url 'home' %}" class="logo">TodoApp</a>
+    </div>
+
+    <div class="nav-right">
+        {% if user.is_authenticated %}
+        <span class="username">
+            Hello, {{ user.username }}
+        </span>
+        <form method="POST" action="{% url 'logout' %}" style="display:inline;">
+            {% csrf_token %}
+            <button type="submit" class="btn-nav btn-logout">
+                Logout
+            </button>
+        </form>
+        {% else %}
+
+
+        <a href="{% url 'register' %}" class="btn-nav btn-primary-nav">
+            Register
+        </a>
+        {% endif %}
+    </div>
+</nav>

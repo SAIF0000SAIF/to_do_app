@@ -1,0 +1,385 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+/* APP WRAPPER */
+.app {
+    width: 95%;
+    max-width: 1000px;
+}
+
+/* MAIN CARD */
+.card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(25px);
+    border-radius: 25px;
+    padding: 35px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6);
+}
+/* LEFT PANEL */
+.left-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.right-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    min-width: 0;
+}
+
+.title {
+    font-size: 28px;
+    font-weight: 600;
+}
+
+.task-heading {
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.task-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* INPUT FIELD (single clean version) */
+.input-field {
+     width: 100%;
+    height: 45px;
+    padding: 12px 15px;
+    border-radius: 10px;
+    border: none;
+    background: rgba(255, 255, 255, 0.08);
+    color: white;
+    outline: none;
+    transition: 0.3s ease;
+}
+
+.input-field::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.input-field:focus {
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 0 0 2px #6366f1;
+}
+
+/* BUTTON */
+.btn-primary {
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    background: #6366f1;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.btn-primary:hover {
+    background: #4f46e5;
+    transform: translateY(-2px);
+}
+
+/* AUTH STYLES */
+.auth-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.auth-card {
+    width: 420px;
+    padding: 40px;
+    border-radius: 25px;
+    background: rgba(30, 41, 59, 0.6);
+    backdrop-filter: blur(30px);
+    box-shadow: 0 30px 70px rgba(0, 0, 0, 0.6);
+}
+
+.auth-title {
+    font-size: 26px;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 8px;
+}
+
+.auth-subtitle {
+    font-size: 14px;
+    opacity: 0.7;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.form-group label {
+    font-size: 13px;
+    opacity: 0.8;
+}
+
+/* DJANGO FORM INPUT FIX */
+.auth-form input {
+    width: 100%;
+    height: 45px;
+    padding: 12px 15px;
+    border-radius: 10px;
+    border: none;
+    background: rgba(255, 255, 255, 0.08);
+    color: white;
+    outline: none;
+    transition: 0.3s ease;
+}
+
+.auth-form input:focus {
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 0 0 2px #6366f1;
+}
+
+/* PASSWORD VALIDATION LIST STYLE */
+.auth-form ul {
+    margin-top: 6px;
+    padding-left: 18px;
+    font-size: 12px;
+    opacity: 0.7;
+}
+
+.auth-form ul li {
+    margin-bottom: 4px;
+}
+
+/* HELP TEXT */
+.help-text {
+    font-size: 12px;
+    opacity: 0.6;
+    margin-top: 4px;
+}
+
+/* PASSWORD TOGGLE */
+.password-wrapper {
+    position: relative;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 12px;
+    top: 38px;
+    cursor: pointer;
+    font-size: 15px;
+    opacity: 0.6;
+    transition: 0.3s ease;
+}
+
+.toggle-password:hover {
+    opacity: 1;
+}
+
+/* FOOTER */
+.auth-footer {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.auth-footer a {
+    color: #818cf8;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s ease;
+}
+
+.auth-footer a:hover {
+    color: white;
+}
+
+/* TASK LIST */
+.task-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+/* SCROLLBAR */
+.task-list::-webkit-scrollbar {
+    width: 6px;
+}
+
+.task-list::-webkit-scrollbar-thumb {
+    background: #6366f1;
+    border-radius: 10px;
+}
+
+/* TASK CARD */
+.task-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    padding: 15px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.08);
+    transition: 0.3s ease;
+}
+
+.task-content {
+    min-width: 0;
+}
+
+.task-card:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-3px);
+}
+
+.task-title {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.task-desc {
+    font-size: 14px;
+    opacity: 0.7;
+    word-break: break-word;
+}
+
+.empty-state {
+    padding: 15px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.06);
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+.btn-delete {
+    text-decoration: none;
+    color: #f87171;
+    font-size: 14px;
+    transition: 0.3s ease;
+}
+
+.btn-delete:hover {
+    color: #ef4444;
+}
+
+/* NAVBAR */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 25px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    border-radius: 15px;
+    margin-bottom: 25px;
+}
+
+.logo {
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.username {
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+.btn-nav {
+    text-decoration: none;
+    padding: 8px 14px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    font-size: 14px;
+    border: none;
+    font-family: inherit;
+    line-height: 1.2;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.btn-nav:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.btn-primary-nav {
+    background: #6366f1;
+}
+
+.btn-primary-nav:hover {
+    background: #4f46e5;
+}
+
+.btn-logout {
+    background: #ef4444;
+}
+
+.btn-logout:hover {
+    background: #dc2626;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .card {
+        grid-template-columns: 1fr;
+        padding: 25px;
+    }
+
+    .auth-card {
+        width: 90%;
+    }
+}
+
+/* ANIMATION */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

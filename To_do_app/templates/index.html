@@ -1,0 +1,60 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>To_do_app</title>
+    <link rel="stylesheet" href="{% static 'To_do_app/style.css' %}">
+</head>
+
+<body>
+    <div class="app">
+        {% include "components/nav.html" %}
+        <div class="card">
+
+            <div class="left-panel">
+                <h1 class="title">Todo Manager</h1>
+
+                <form method="POST" class="task-form">
+                    {% csrf_token %}
+
+                    <input class="input-field" name="title" placeholder="Task title" type="text" required>
+
+                    <input class="input-field" name="description" placeholder="Task description" type="text">
+
+                    <button class="btn-primary" type="submit">
+                        Add Task
+                    </button>
+                </form>
+            </div>
+
+            <div class="right-panel">
+                <h2 class="task-heading">Your Tasks</h2>
+
+                <div class="task-list">
+                    {% for task in tasks %}
+                    <div class="task-card">
+                        <div class="task-content">
+                            <h3 class="task-title">{{ task.title }}</h3>
+                            <p class="task-desc">{{ task.description }}</p>
+                        </div>
+
+                        <a class="btn-delete" href="{% url 'delete_task' task.id %}">
+                            Delete
+                        </a>
+                    </div>
+                    {% empty %}
+                    <div class="empty-state">
+                        No tasks yet. Start being productive.
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+
+
+</html>

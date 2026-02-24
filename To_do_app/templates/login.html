@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" href="{% static 'To_do_app/style.css' %}">
+</head>
+<body>
+    <div class="auth-container">
+        <div class="auth-card">
+            <h2 class="auth-title">Welcome Back 👋</h2>
+            <p class="auth-subtitle">Login to continue your productivity journey</p>
+
+            <form method="POST" class="auth-form">
+                {% csrf_token %}
+
+                <div class="form-group">
+                    <label>Username</label>
+                    <input type="text" name="username" class="input-field" required>
+                </div>
+
+                <div class="form-group password-wrapper">
+                    <label>Password</label>
+                    <input type="password" name="password" id="password" class="input-field" required>
+                    <span id="togglePassword" class="toggle-password">👁</span>
+                </div>
+
+                <button type="submit" class="btn-primary">
+                    Login
+                </button>
+            </form>
+
+            <p class="auth-footer">
+                Don’t have an account?
+                <a href="{% url 'register' %}">Register</a>
+            </p>
+        </div>
+    </div>
+
+    <script>
+        const toggle = document.getElementById("togglePassword");
+        const password = document.getElementById("password");
+
+        toggle.addEventListener("click", function () {
+            const type = password.getAttribute("type") === "password" ? "text" : "password";
+            password.setAttribute("type", type);
+            this.textContent = type === "password" ? "👁" : "🙈";
+        });
+    </script>
+</body>
+</html>
